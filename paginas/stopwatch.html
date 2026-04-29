@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronômetro</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("brasilTimeTheme");
+
+          if (savedTheme === "dark" || savedTheme === "light") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <link rel="icon" type="image/x-icon" href="../estilos/favicon.ico?v=2" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../estilos/favicon.ico?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="../estilos/favicon.png?v=2"
+    />
+    <link rel="stylesheet" href="../estilos/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="stopwatch-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="nav-brand" aria-label="Brasil Time">
+          <img
+            src="../estilos/favicon.png"
+            alt=""
+            class="nav-logo"
+            width="34"
+            height="34"
+          />
+          <span>Brasil Time</span>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">Relógio</a>
+          </li>
+          <li class="nav-item">
+            <a href="stopwatch.html" class="nav-link active">Cronômetro</a>
+          </li>
+          <li class="nav-item">
+            <a href="timer.html" class="nav-link">Temporizador</a>
+          </li>
+          <li class="nav-item">
+            <a href="holidays.html" class="nav-link">Feriados</a>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link theme-toggle"
+              id="themeToggleBtn"
+              aria-pressed="false"
+              aria-label="Ativar tema escuro"
+              title="Ativar tema escuro"
+            ></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+      <!-- Seção de Cronômetro -->
+      <div class="stopwatch-section">
+        <h2>Cronômetro</h2>
+        <div class="stopwatch-display">
+          <span class="stopwatch-time" id="stopwatch">00:00.00</span>
+        </div>
+
+        <div class="controls">
+          <button class="btn btn-primary" id="startPauseBtn">Iniciar</button>
+          <button class="btn btn-secondary" id="lapBtn" disabled>Volta</button>
+          <button class="btn btn-danger" id="resetBtn" disabled>
+            Redefinir
+          </button>
+        </div>
+
+        <!-- Lista de Voltas -->
+        <div class="laps-section">
+          <div class="laps-list" id="lapsList">
+            <!-- As voltas aparecem aqui -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/Stopwatch.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Todos os direitos reservados</p>
+      </div>
+    </footer>
+  </body>
+</html>

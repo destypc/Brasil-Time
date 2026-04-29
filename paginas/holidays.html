@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feriados e pontos facultativos do Brasil</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("brasilTimeTheme");
+
+          if (savedTheme === "dark" || savedTheme === "light") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <link rel="icon" type="image/x-icon" href="../estilos/favicon.ico?v=2" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../estilos/favicon.ico?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="../estilos/favicon.png?v=2"
+    />
+    <link rel="stylesheet" href="../estilos/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="holidays-page">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="nav-brand" aria-label="Brasil Time">
+          <img
+            src="../estilos/favicon.png"
+            alt=""
+            class="nav-logo"
+            width="34"
+            height="34"
+          />
+          <span>Brasil Time</span>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">Rel&oacute;gio</a>
+          </li>
+          <li class="nav-item">
+            <a href="stopwatch.html" class="nav-link">Cron&ocirc;metro</a>
+          </li>
+          <li class="nav-item">
+            <a href="timer.html" class="nav-link">Temporizador</a>
+          </li>
+          <li class="nav-item">
+            <a href="holidays.html" class="nav-link active">Feriados</a>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link theme-toggle"
+              id="themeToggleBtn"
+              aria-pressed="false"
+              aria-label="Ativar tema escuro"
+              title="Ativar tema escuro"
+            ></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <section class="holidays-section">
+        <div class="holidays-header">
+          <div>
+            <h2 id="holidaysTitle">Feriados e pontos facultativos do Brasil</h2>
+            <p id="holidaysDescription">
+              Calend&aacute;rio nacional/federal com feriados oficiais e pontos
+              facultativos. Datas estaduais e municipais variam conforme a
+              localidade.
+            </p>
+          </div>
+          <span class="holidays-updated" id="holidaysUpdated"></span>
+        </div>
+
+        <div class="holidays-summary">
+          <div class="holidays-summary-item">
+            <span class="info-label">Ano</span>
+            <strong class="holidays-summary-value" id="holidayYear">2026</strong>
+          </div>
+          <div class="holidays-summary-item">
+            <span class="info-label">Exibindo</span>
+            <strong class="holidays-summary-value" id="holidayVisibleCount">0</strong>
+          </div>
+          <div class="holidays-summary-item">
+            <span class="info-label">J&aacute; ocorreram</span>
+            <strong class="holidays-summary-value" id="pastHolidayCount">0</strong>
+          </div>
+          <div class="holidays-summary-item">
+            <span class="info-label">Pr&oacute;xima data</span>
+            <strong class="holidays-summary-value" id="nextHolidayLabel">
+              Carregando...
+            </strong>
+          </div>
+        </div>
+
+        <div class="holiday-filter-bar" aria-label="Filtrar feriados">
+          <span class="holiday-filter-label">Filtrar por tipo</span>
+          <div class="holiday-filter-list" id="holidayFilters"></div>
+        </div>
+
+        <div class="holiday-list" id="holidayList"></div>
+      </section>
+    </div>
+
+    <script src="../scripts/theme.js"></script>
+    <script src="../scripts/holidays.js"></script>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Todos os direitos reservados</p>
+      </div>
+    </footer>
+  </body>
+</html>

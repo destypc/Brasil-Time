@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horário de Brasília</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("brasilTimeTheme");
+
+          if (savedTheme === "dark" || savedTheme === "light") {
+            document.documentElement.dataset.theme = savedTheme;
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <link rel="icon" type="image/x-icon" href="estilos/favicon.ico?v=2" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="estilos/favicon.ico?v=2"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="estilos/favicon.png?v=2"
+    />
+    <link rel="stylesheet" href="estilos/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="clock-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-brand" aria-label="Brasil Time">
+          <img
+            src="estilos/favicon.png"
+            alt=""
+            class="nav-logo"
+            width="34"
+            height="34"
+          />
+          <span>Brasil Time</span>
+        </a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">Relógio</a>
+          </li>
+          <li class="nav-item">
+            <a href="paginas/stopwatch.html" class="nav-link">Cronômetro</a>
+          </li>
+          <li class="nav-item">
+            <a href="paginas/timer.html" class="nav-link">Temporizador</a>
+          </li>
+          <li class="nav-item">
+            <a href="paginas/holidays.html" class="nav-link">Feriados</a>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link theme-toggle"
+              id="themeToggleBtn"
+              aria-pressed="false"
+              aria-label="Ativar tema escuro"
+              title="Ativar tema escuro"
+            ></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="header">
+        <h1>Horário de Brasília</h1>
+        <p>Hora exibida no fuso de Brasília</p>
+      </div>
+
+      <!-- Relógio Digital -->
+      <div class="clock-section">
+        <div class="digital-clock">
+          <span class="time" id="resultado">00:00:00</span>
+          <span class="date" id="data-completa">Terça-feira, 28 de abril</span>
+        </div>
+      </div>
+
+      <!-- Informações adicionais -->
+      <div class="info-footer">
+        <div class="info-item">
+          <span class="info-label">Fuso Horário</span>
+          <span class="info-value" id="timezone-value">BRT</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Origem</span>
+          <span class="info-value">Relógio do navegador</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/Clock.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="footer-info-item">
+            <span><strong>Brasil Time</strong> - Horário de Brasília</span>
+          </div>
+          <div class="footer-info-item">
+            <span>Sincronizado com</span>
+            <strong>Navegador</strong>
+          </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-copyright">
+          &copy; <strong>2026</strong> Brasil Time.
+          <strong>Todos os direitos reservados.</strong>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
