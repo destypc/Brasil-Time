@@ -1278,19 +1278,6 @@ button.nav-link:focus-visible {
   .info-footer {
     grid-template-columns: 1fr;
   }
-
-  .footer {
-    padding: 32px 20px;
-  }
-
-  .footer-github-links {
-    gap: 14px;
-    font-size: 0.88rem;
-  }
-
-  .github-link {
-    padding: 6px 11px;
-  }
 }
 
 @media (max-width: 480px) {

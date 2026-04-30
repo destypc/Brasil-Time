@@ -11,17 +11,17 @@ class ThemeManager {
     this.init();
   }
 
-  getSavedTheme() {
-    try {
-      const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-      if (savedTheme === "dark" || savedTheme === "light") {
-        return savedTheme;
-      }
-    } catch (error) {
-      console.warn("Erro ao recuperar tema do localStorage:", error);
-    }
-    return "light";
-  }
+  // getSavedTheme() {
+  //   try {
+  //     const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  //     if (savedTheme === "dark" || savedTheme === "light") {
+  //       return savedTheme;
+  //     }
+  //   } catch (error) {
+  //     console.warn("Erro ao recuperar tema do localStorage:", error);
+  //   }
+  //   return "light";
+  // }
 
   applyTheme(theme) {
     try {
