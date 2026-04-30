@@ -114,7 +114,7 @@ body {
   );
   color: var(--text-dark);
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   padding-top: 70px;
   min-height: 100svh;
   display: flex;
@@ -1278,6 +1278,19 @@ button.nav-link:focus-visible {
   .info-footer {
     grid-template-columns: 1fr;
   }
+
+  .footer {
+    padding: 32px 20px;
+  }
+
+  .footer-github-links {
+    gap: 14px;
+    font-size: 0.88rem;
+  }
+
+  .github-link {
+    padding: 6px 11px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1466,7 +1479,22 @@ button.nav-link:focus-visible {
   }
 
   .footer {
-    padding: 12px;
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .footer-content {
+    gap: 14px;
+  }
+
+  .footer-github-links {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+
+  .github-link {
+    padding: 5px 10px;
+    font-size: 0.85rem;
   }
 
   .footer p {
